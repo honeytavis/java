@@ -6,5 +6,6 @@
 class StaticCodeTest {
   public static void main(String[] args) {
     StaticCode.show(); 
+    StaticCode.show(); 
   }
 }
