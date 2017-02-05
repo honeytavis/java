@@ -22,21 +22,21 @@ class Singleton {
   private Singleton() { } // 将类的构造函数私有化
 
   // 非延迟加载方式
-  // private static Singleton s = new Singleton(); // 在本类中new一个对象
-  // 
-  // public static Singleton getInstance() { // 返回该对象
-  //   return s; 
-  // }
+  private static final Singleton SINGLE_INSTANCE  = new Singleton(); // 在本类中new一个对象
+  
+  public static Singleton getInstance() { // 返回该对象
+    return SINGLE_INSTANCE; 
+  }
 
   // 延迟加载方式
-  private static Singleton s = null;  
+  // private static Singleton s = null;  
 
-  public static Singleton getInstance() { // 返回该对象
-    if (s == null) { 
-      s = new Singleton(); 
-    }
-    return s; 
-  }
+  // public static Singleton getInstance() { // 返回该对象
+  //   if (s == null) { 
+  //     s = new Singleton(); 
+  //   }
+  //   return s; 
+  // }
 
   public void show() {
     System.out.println("name: "+name+", price: "+price);
