@@ -1,0 +1,17 @@
+在官网下载 jdk-8u112-linux-x64.tar.gz
+
+$tar -xvzf jdk-8u112-linux-x64.tar.gz
+
+$sudo cp -r jdk-8u112-linux-x64.tar.gz /usr/share/java-1.8.0/jdk1.8.0_112
+
+$ vim .bashrc
+追加3个环境变量:
+export JAVA_HOME=/usr/share/java-1.8.0/jdk1.8.0_112
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
+export PATH=$PATH=$JAVA_HOME/bin
+
+退出系统重新登录或重启系统
+
+检查环境变量是否生效
+$ java -version
+$ javac
