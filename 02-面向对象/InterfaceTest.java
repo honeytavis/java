@@ -33,6 +33,41 @@ class Worker implements Employee {
   }
 }
 
+interface I1 {
+  void show1(); 
+}
+
+interface I2 {
+  void show2(); 
+}
+
+// 接口之间可以多继承
+interface I3 extends I1, I2 {
+  void show3(); 
+}
+
+// class Demo implements I3 {
+//   public void show1() {}
+//   public void show2() {}
+//   // Demo需要使用接口中的部分方法
+//   public void show3() {
+//     System.out.println("Demo"); 
+//   }
+// }
+
+// 抽象类方便创建接口的对象
+abstract class Demo implements I3 {
+  public void show1() {}
+  public void show2() {}
+  public void show3() {}
+}
+
+class Demo1 extends Demo {
+  public void show3() {
+    System.out.println("Demo1.show3()"); 
+  }
+}
+
 class InterfaceTest {
   public static void main(String[] args) {
     Worker w = new Worker(); 
